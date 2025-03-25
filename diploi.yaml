@@ -1,0 +1,12 @@
+diploiVersion: v1.0
+components:
+  - name: Node.js
+    identifier: VideoScribe
+    package: https://github.com/diploi/component-nodejs#main
+    env:
+      include:
+        - mongo.*
+addons:
+  - name: MongoDB
+    identifier: mongo
+    package: https://github.com/diploi/addon-mongo#main
