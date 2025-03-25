@@ -1,13 +1,14 @@
 const { Readable } = require("stream"); // Import the Readable class
 const { google } = require("googleapis");
 const fs = require("fs");
+const dotenv = require("dotenv")
 
-const Client_ID =
-  "862074808051-pe8pipc6pr777pgmbudnrupp3p57ectq.apps.googleusercontent.com";
-const CLIENT_SECRET = "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";
-const REDIRECT_URL = "https://developers.google.com/oauthplayground";
-const REFRESH_TOKEN =
-  "1//04fDj7VEQjvj4CgYIARAAGAQSNwF-L9Irr4zl61OdkXE5ywyTQwa9iMdBH6IakF0Puy0Ycck70gd_6SylxNLExR1TnI0yc5xxlHk";
+dotenv.config();
+
+const Client_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const REDIRECT_URL = process.env.REDIRECT_URL;
+const REFRESH_TOKEN =process.env.REFRESH_TOKEN;
 
 const oauth2Client = new google.auth.OAuth2(
   Client_ID,
